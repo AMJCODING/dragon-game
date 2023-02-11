@@ -6,10 +6,11 @@
 }
 body{
     background-color: black;
+    width: 300px;
 }
 
 .the_game{
-width: 1600px;
+width: 1650px;
 height: 700px;
 box-shadow: 3px 3px 10px white ;
 margin-left: 0px;
@@ -22,14 +23,13 @@ margin-left: 0px;
     position: relative;
     top: 600px;
     transition: 0.3s;
-    border-radius: 100px;
 }
 
 .char_jump{
-    animation: jump 0.8s infinite;
+    animation: jump 1s infinite;
 }
 .char_down{
-animation: down 0.8s infinite;
+animation: down 1s infinite;
 }
 
 
@@ -49,6 +49,24 @@ animation: down 0.8s infinite;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .block{
 
     background-color: white;
@@ -58,97 +76,97 @@ animation: down 0.8s infinite;
     top: 530px;
     left: 1550px;
     transition: 1s;
-    animation: block 4s infinite linear;
+    animation: block 6s infinite linear;
 }
 
 .block_fast_1{
-    animation: block 3.98s infinite linear;
+    animation: block 5.98s infinite linear;
 }
 
 
 .block_fast_2{
-    animation: block 3.96s infinite linear;
+    animation: block 5.96s infinite linear;
 }
 
 
 .block_fast_3{
-    animation: block 3.94s infinite linear;
+    animation: block 5.94s infinite linear;
 }
 
 .block_fast_4{
-    animation: block 3.92s infinite linear;
+    animation: block 5.92s infinite linear;
 }
 
 .block_fast_5{
-    animation: block 3.90s infinite linear;
+    animation: block 5.90s infinite linear;
 }
 
 
 .block_fast_6{
-    animation: block 3.88s infinite linear;
+    animation: block 5.88s infinite linear;
 }
 
 
 .block_fast_7{
-    animation: block 3.86s infinite linear;
+    animation: block 5.86s infinite linear;
 }
 
 .block_fast_8{
-    animation: block 3.84s infinite linear;
+    animation: block 5.84s infinite linear;
 }
 
 .block_fast_9{
-    animation: block 3.82s infinite linear;
+    animation: block 5.82s infinite linear;
 }
 
 
 .block_fast_10{
-    animation: block 3.80s infinite linear;
+    animation: block 5.80s infinite linear;
 }
 
 
 .block_fast_11{
-    animation: block 3.78s infinite linear;
+    animation: block 5.78s infinite linear;
 }
 
 .block_fast_12{
-    animation: block 3.76s infinite linear;
+    animation: block 5.76s infinite linear;
 }
 
 .block_fast_13{
-    animation: block 3.74s infinite linear;
+    animation: block 5.74s infinite linear;
 }
 
 
 .block_fast_14{
-    animation: block 3.72s infinite linear;
+    animation: block 5.72s infinite linear;
 }
 
 
 .block_fast_15{
-    animation: block 3.70s infinite linear;
+    animation: block 5.70s infinite linear;
 }
 
 .block_fast_16{
-    animation: block 3.68s infinite linear;
+    animation: block 5.68s infinite linear;
 }
 
 .block_fast_17{
-    animation: block 3.66s infinite linear;
+    animation: block 5.66s infinite linear;
 }
 
 
 .block_fast_18{
-    animation: block 3.64s infinite linear;
+    animation: block 5.64s infinite linear;
 }
 
 
 .block_fast_19{
-    animation: block 3.62s infinite linear;
+    animation: block 5.62s infinite linear;
 }
 
 .block_fast_20{
-    animation: block 3.60s infinite linear;
+    animation: block 5.60s infinite linear;
 }
 
 
@@ -157,10 +175,11 @@ animation: down 0.8s infinite;
 
 @keyframes block{
 
-    0%{left: 1550px;}
-    100%{left: -50px;}
+    0%{left: 1600px;}
+    100%{left: -100px;}
 
 }
+
 
 #counter{
 width: 70px;
@@ -181,7 +200,7 @@ margin-bottom: 10px;
     top: 400px;
     left: 1550px;
     transition: 1s;
-    animation: block1 5.5s infinite linear;
+    animation: block1 8s infinite linear;
 }
 
 
@@ -191,15 +210,9 @@ margin-bottom: 10px;
 
 
 @keyframes block1{
-    0%{left: 1550px;}
-    100%{left: -50px;}
+    0%{left: 1600px;}
+    100%{left: -100px;}
 }
-
-
-
-
-
-
 
 
 
@@ -209,6 +222,7 @@ button{
     font-size: 100px;
     transition: 0.1s;
     cursor: pointer;
+    width: 100px;
 }
 
 

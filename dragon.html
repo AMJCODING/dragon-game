@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body id="body">
-    <label for="counter">Score: </label>
+    <label for="counter">THE SCORE: </label>
     <input  value="0" type="number" id="counter" readonly >
     <div class="the_game">
 
@@ -19,8 +19,10 @@
         
     </div>
 
-    <button onclick="jumping()">↑</button>
-    <button onclick="down_animation()">↓</button>
+    <button class="up" onclick="jumping()">↑</button>
+    <button class="down" onclick="down_animation()">↓</button>
+    <button class="left" onclick="left_animation()">←</button>
+    <button class="right" onclick="right_animation()">→</button>
 
     <script src="dragon.js"></script>
 </body>
