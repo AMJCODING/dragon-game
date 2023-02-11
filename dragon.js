@@ -13,20 +13,10 @@ function jumping(){
 
     setTimeout(() => {
         char.classList.remove("char_jump")
-    }, 1000);
+    }, 800);
 
 }
 
-
- function down_animation(){
-
-    char.classList.add("char_down")
-
-    setTimeout(() => {
-        char.classList.remove("char_down")
-    }, 1000);
-
- }
 
 
 
@@ -45,17 +35,24 @@ setInterval(() => {
 
     if(block_left<char_width-5 && block_left>0 && char_top>=600 - block_height ){
 
-let lose_msg =         confirm("you lose")
+        alert("you lose")
         block.style.animation = "none"
         block.style.display = "none"
 
-        if(lose_msg ===true){
-            window.open("http://127.0.0.1:5500/dragon.html")
-        }
     }
 }, 10);
 
 
+
+function down_animation(){
+
+    char.classList.add("char_down")
+
+    setTimeout(() => {
+        char.classList.remove("char_down")
+    }, 800);
+
+ }
 
 
 setInterval(() => {
@@ -70,34 +67,31 @@ setInterval(() => {
 
     if(block1_left<char_width-5 && block1_left>0 && char_top<=640 ){
 
-let lose_msg =         confirm("you lose")
+        alert("you lose")
         block.style.animation = "none"
         block.style.display = "none"
 
-        if(lose_msg ===true){
-            window.open("http://127.0.0.1:5500/dragon.html")
-        }
     }
 }, 10);
 
 
 
 
-// counter
+counter
 
 
 
 
 let count_input = document.getElementById("counter");
 
-function countDown(){
+function countUp(){
     count_input.value = parseInt(count_input.value) + 1 ;
 
-    for(i = 0 ; i < 20 ; i++){
+    for(i = 0 ; i < 21 ; i++){
         if(count_input.value===`${i}0`){
             block.classList.add(`block_fast_${i}`)
         }}
      
 }
 
-let counter1 = setInterval(countDown , 1000)
+let counter1 = setInterval(countUp , 500)
