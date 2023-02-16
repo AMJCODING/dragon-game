@@ -1,28 +1,25 @@
 *{
     margin: 0px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
     font-size: 30px;
 }
 body{
-    background-color: black;
-    width: 300px;
+    background-color: #eee;
 }
 
 .the_game{
 width: 1650px;
 height: 700px;
-box-shadow: 3px 3px 10px white ;
+box-shadow: 3px 3px 10px black ;
 margin-left: 0px;
 }
 
 .char{
-    background-color: white;
-    width: 50px;
+    width: 70px;
     height: 100px;
     position: relative;
-    top: 600px;
-    transition: 0.3s;
+    top: 600;
+    transition: 0.5s;
 }
 
 .char_jump{
@@ -34,33 +31,18 @@ animation: down 1s infinite;
 
 
 @keyframes jump {
-0%{top: 600px;}
-30%{top: 500px;}
-70%{top: 500px;}
-100%{top: 600px;}
+0%{top: 600;}
+30%{top: 500;}
+70%{top: 500;}
+100%{top: 600;}
 }
 
 @keyframes down {
-    0%{top:600px ;}
-    30%{top:660px ;}
-    70%{top:660px ;}
-    100%{top: 600px; ;}
+    0%{top:600 ;}
+    30%{top:610;}
+    70%{top:610 ;}
+    100%{top: 600 ;}
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -69,12 +51,12 @@ animation: down 1s infinite;
 
 .block{
 
-    background-color: white;
+    background-color: black;
     width: 50px;
     height: 70px;
     position: relative;
     top: 530px;
-    left: 1550px;
+    left: 1600px;
     transition: 1s;
     animation: block 6s infinite linear;
 }
@@ -175,8 +157,8 @@ animation: down 1s infinite;
 
 @keyframes block{
 
-    0%{left: 1600px;}
-    100%{left: -100px;}
+    0%{left: 1600;}
+    100%{left:-50;}
 
 }
 
@@ -184,21 +166,20 @@ animation: down 1s infinite;
 #counter{
 width: 70px;
 height: 50px;
-background-color: black;
-color: white;
-font-size: 20px;
+font-size: 25px;
 border: 1 solid  white;
 margin-bottom: 10px;
+border-radius: 10px;
 }
 
 
 .block1{
-    background-color: white;
+    background-color: black;
     width: 50px;
     height: 70px;
     position: relative;
-    top: 400px;
-    left: 1550px;
+    top: 390px;
+    left: 1600px;
     transition: 1s;
     animation: block1 8s infinite linear;
 }
@@ -210,10 +191,9 @@ margin-bottom: 10px;
 
 
 @keyframes block1{
-    0%{left: 1600px;}
-    100%{left: -100px;}
+    0%{left: 1600;}
+    100%{left: -50;}
 }
-
 
 
 button{

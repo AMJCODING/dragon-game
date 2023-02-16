@@ -10,9 +10,9 @@
 <body id="body">
     <label for="counter">THE SCORE: </label>
     <input  value="0" type="number" id="counter" readonly >
-    <div class="the_game">
+    <div id="the_game" class="the_game">
 
-        <div id="char" class="char"></div>
+        <canvas id="char" class="char"></canvas>
 
         <div id="block" class="block"></div>
         <div id="block1" class="block1"></div>
@@ -23,6 +23,12 @@
     <button class="down" onclick="down_animation()">↓</button>
     <button class="left" onclick="left_animation()">←</button>
     <button class="right" onclick="right_animation()">→</button>
+
+<br>
+<br>
+<br>
+
+
 
     <script src="dragon.js"></script>
 </body>
