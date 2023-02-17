@@ -9,7 +9,7 @@ body{
 
 .the_game{
 width: 1650px;
-height: 700px;
+height: 690px;
 box-shadow: 3px 3px 10px black ;
 margin-left: 0px;
 }
@@ -20,6 +20,8 @@ margin-left: 0px;
     position: relative;
     top: 600;
     transition: 0.5s;
+    border: 1px solid black;
+    border-radius: 100px;
 }
 
 .char_jump{
@@ -55,10 +57,10 @@ animation: down 1s infinite;
     width: 50px;
     height: 70px;
     position: relative;
-    top: 530px;
+    top: 520px;
     left: 1600px;
     transition: 1s;
-    animation: block 6s infinite linear;
+    animation: block 5s infinite linear;
 }
 
 .block_fast_1{
@@ -178,10 +180,9 @@ border-radius: 10px;
     width: 50px;
     height: 70px;
     position: relative;
-    top: 390px;
+    top: 370px;
     left: 1600px;
     transition: 1s;
-    animation: block1 8s infinite linear;
 }
 
 

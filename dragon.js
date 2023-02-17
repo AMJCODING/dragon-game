@@ -1,18 +1,14 @@
-let char = document.getElementById("char");
+let dog = document.getElementById("dog");
 
-let block = document.getElementById("block");
+let lowerBlock = document.getElementById("block");
 
-let block1 = document.getElementById("block1");
+let upperBlock = document.getElementById("block1");
 
-let ctx = char.getContext("2d")
+let ctx = dog.getContext("2d")
 
 let frameX = 0;
 let frameY = 0;
 let kalb =6;
-
-
-
-
 
 
 
@@ -24,10 +20,11 @@ let count_input = document.getElementById("counter");
 function countUp(){
     count_input.value = parseInt(count_input.value) + 1 ;
 
-    for(i = 0 ; i < 21 ; i++){
-        if(count_input.value===`${i}0`){
-            block.classList.add(`block_fast_${i}`)
-        }}
+    // for(i = 0 ; i < 21 ; i++){
+    //     if(count_input.value===`${i}0`){
+    //        lowerBlock.classList.add(`block_fast_${i}`)
+    //    }
+    // }
      
 }
 
@@ -53,10 +50,10 @@ function jumping(){
 
     kalb=6
 
-    char.classList.add("char_jump")
+    dog.classList.add("char_jump")
 
     setTimeout(() => {
-        char.classList.remove("char_jump")
+        dog.classList.remove("char_jump")
     }, 1000);
 
     frameY=1
@@ -72,29 +69,33 @@ function jumping(){
 }
 
 setInterval(() => {
-    let char_top = parseInt(window.getComputedStyle(char).getPropertyValue("top"))
+    let dogTop = parseInt(window.getComputedStyle(dog).getPropertyValue("top"))
+    let dogWidth = parseInt(window.getComputedStyle(dog).getPropertyValue("width"))
+    let dogLeft = parseInt(window.getComputedStyle(dog).getPropertyValue("left"))
 
-    let char_width = parseInt(window.getComputedStyle(char).getPropertyValue("width"))
+    let lowerBlockLeft = parseInt(window.getComputedStyle(lowerBlock).getPropertyValue("left"))
+    let lowerBlockRight = parseInt(window.getComputedStyle(lowerBlock).getPropertyValue("right"))
+    let lowerBlockHeight =  parseInt(window.getComputedStyle(lowerBlock).getPropertyValue("height"))
+    let collesionRange = Array.from(Array(3).keys())
 
-    let block_left = parseInt(window.getComputedStyle(block).getPropertyValue("left"))
+    // if(lowerBlockLeft == dogLeft + dogWidth && lowerBlockLeft > 0 && dogTop >= 600 - lowerBlockHeight ){
 
-    let block_height =  parseInt(window.getComputedStyle(block).getPropertyValue("height"))
+        if(
+            collesionRange.includes(Math.abs(dogLeft + dogWidth - lowerBlockLeft)) 
+            
+            && dogTop >= 600 - lowerBlockHeight
+            ){
 
-    let char_left = parseInt(window.getComputedStyle(char).getPropertyValue("left"))
 
-
-    if(block_left == char_left + char_width && block_left > 0 && char_top >= 600 - block_height ){
-
-
-        alert(`GAME OVER YOUR SCORE IS "${count}"`)
-        block.style.animation = "none";
-        block.style.display = "none";
-        block1.style.animation = "none";
-        block1.style.display = "none";
+        alert(`GAME OVER YOUR SCORE IS "${count_input.value}"`)
+        lowerBlock.style.animation = "none";
+        lowerBlock.style.display = "none";
+        upperBlock.style.animation = "none";
+        upperBlock.style.display = "none";
         
 
     }
-}, 1);
+}, 0);
 
 
 
@@ -107,10 +108,10 @@ setInterval(() => {
 function down_animation(){
 
     kalb=4;
-    char.classList.add("char_down")
+    dog.classList.add("char_down")
 
     setTimeout(() => {
-        char.classList.remove("char_down")
+        dog.classList.remove("char_down")
     }, 1000);
 
     frameY=5;
@@ -123,23 +124,22 @@ function down_animation(){
 
 
 setInterval(() => {
-    let char_top = parseInt(window.getComputedStyle(char).getPropertyValue("top"))
+    let char_top = parseInt(window.getComputedStyle(dog).getPropertyValue("top"))
 
-    let char_width = parseInt(window.getComputedStyle(char).getPropertyValue("width"))
+    let char_width = parseInt(window.getComputedStyle(dog).getPropertyValue("width"))
 
-    let block1_left = parseInt(window.getComputedStyle(block1).getPropertyValue("left"))
+    let block1_left = parseInt(window.getComputedStyle(upperBlock).getPropertyValue("left"))
 
-    let char_left = parseInt(window.getComputedStyle(char).getPropertyValue("left"))
+    let char_left = parseInt(window.getComputedStyle(dog).getPropertyValue("left"))
 
 
     if(block1_left =0 && char_left+char_width && block1_left >0 && char_top<=640 ){
 
-        alert(`GAME OVER YOUR SCORE IS "${count}"`)
-        block1.style.animation = "none";
-        block1.style.display = "none";
-        block.style.animation = "none";
-        block.style.display = "none";
-        count=0;
+        alert(`GAME OVER YOUR SCORE IS "${count_input.value}"`)
+        upperBlock.style.animation = "none";
+        upperBlock.style.display = "none";
+        lowerBlock.style.animation = "none";
+        lowerBlock.style.display = "none";
 
     }
 }, 10);
@@ -174,7 +174,7 @@ setTimeout(() => {
     
         counter+=100;
     
-    char.style.left = `${counter}`
+    dog.style.left = `${counter}`
     
     }
     
@@ -196,7 +196,7 @@ setTimeout(() => {
 }, 300);
     counter-=100;
 
-char.style.left = `${counter}`
+dog.style.left = `${counter}`
 
 }
 
@@ -218,8 +218,8 @@ char.style.left = `${counter}`
 
 
 //animation
-const CANVAS_WIDTH = char.width = 600;
-const CANVAS_HEiGHT = char.height = 600;
+const CANVAS_WIDTH = dog.width = 600;
+const CANVAS_HEiGHT = dog.height = 600;
 
 const palyer_img = new Image();
 
@@ -236,7 +236,7 @@ const staggerFrames = 5;
 
 function animate() {
     ctx.clearRect(0 , 0 , CANVAS_WIDTH , CANVAS_HEiGHT);
-    position =Math.floor( gameFrame/staggerFrames ) % kalb;
+    position = Math.floor( gameFrame/staggerFrames ) % kalb;
     frameX = position * sprite_width
     ctx.drawImage(palyer_img ,frameX  ,frameY * sprite_height, sprite_width , sprite_height , 0 , 0 ,sprite_width , sprite_height  );
 
