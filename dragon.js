@@ -20,12 +20,11 @@ let count_input = document.getElementById("counter");
 function countUp(){
     count_input.value = parseInt(count_input.value) + 1 ;
 
-    // for(i = 0 ; i < 21 ; i++){
-    //     if(count_input.value===`${i}0`){
-    //        lowerBlock.classList.add(`block_fast_${i}`)
-    //    }
-    // }
-     
+    for(i = 1 ; i < 50 ; i++){
+        if(count_input.value===`${i}0`){
+            lowerBlock.style.animation=` block${i}0 5s infinite linear`;
+       }
+    }
 }
 
 let counter1 = setInterval(countUp , 500)
@@ -33,8 +32,6 @@ let counter1 = setInterval(countUp , 500)
 
 
  let count = count_input.value;
-
-
 
 
 
@@ -68,33 +65,66 @@ function jumping(){
 
 }
 
+
+
+
+
+
+
+//losing fuction
 setInterval(() => {
+    //the dog
     let dogTop = parseInt(window.getComputedStyle(dog).getPropertyValue("top"))
     let dogWidth = parseInt(window.getComputedStyle(dog).getPropertyValue("width"))
     let dogLeft = parseInt(window.getComputedStyle(dog).getPropertyValue("left"))
 
+    //lower block
     let lowerBlockLeft = parseInt(window.getComputedStyle(lowerBlock).getPropertyValue("left"))
     let lowerBlockRight = parseInt(window.getComputedStyle(lowerBlock).getPropertyValue("right"))
     let lowerBlockHeight =  parseInt(window.getComputedStyle(lowerBlock).getPropertyValue("height"))
-    let collesionRange = Array.from(Array(3).keys())
+
+
+    //upper block
+
+    let upperBlockLeft = parseInt(window.getComputedStyle(upperBlock).getPropertyValue("left"))
+    let upperBlockRight = parseInt(window.getComputedStyle(upperBlock).getPropertyValue("right"))
+    let upperBlockHeight =  parseInt(window.getComputedStyle(upperBlock).getPropertyValue("height"))
+
+    // the range fo collesion
+    let collesionRange = Array.from(Array(5).keys())
+
+    if(
+        collesionRange.includes(Math.abs(dogLeft + dogWidth - lowerBlockLeft)) 
+        &&
+        dogTop >= 600 - lowerBlockHeight
+        ){
+            
+    alert(`GAME OVER YOUR SCORE IS "${count_input.value}"`)
+    lowerBlock.style.animation = "none";
+    lowerBlock.style.display = "none";
+    upperBlock.style.animation = "none";
+    upperBlock.style.display = "none";
+         };
+
+
+    if (
+        collesionRange.includes(Math.abs(dogLeft + dogWidth - upperBlockLeft)) 
+        &&
+        dogTop <= 620
+        ) {
+            
+    alert(`GAME OVER YOUR SCORE IS "${count_input.value}"`)
+    lowerBlock.style.animation = "none";
+    lowerBlock.style.display = "none";
+    upperBlock.style.animation = "none";
+    upperBlock.style.display = "none";
+        }
+    
+
+
 
     // if(lowerBlockLeft == dogLeft + dogWidth && lowerBlockLeft > 0 && dogTop >= 600 - lowerBlockHeight ){
 
-        if(
-            collesionRange.includes(Math.abs(dogLeft + dogWidth - lowerBlockLeft)) 
-            
-            && dogTop >= 600 - lowerBlockHeight
-            ){
-
-
-        alert(`GAME OVER YOUR SCORE IS "${count_input.value}"`)
-        lowerBlock.style.animation = "none";
-        lowerBlock.style.display = "none";
-        upperBlock.style.animation = "none";
-        upperBlock.style.display = "none";
-        
-
-    }
 }, 0);
 
 
@@ -121,28 +151,6 @@ function down_animation(){
     }, 1000);
 
  }
-
-
-setInterval(() => {
-    let char_top = parseInt(window.getComputedStyle(dog).getPropertyValue("top"))
-
-    let char_width = parseInt(window.getComputedStyle(dog).getPropertyValue("width"))
-
-    let block1_left = parseInt(window.getComputedStyle(upperBlock).getPropertyValue("left"))
-
-    let char_left = parseInt(window.getComputedStyle(dog).getPropertyValue("left"))
-
-
-    if(block1_left =0 && char_left+char_width && block1_left >0 && char_top<=640 ){
-
-        alert(`GAME OVER YOUR SCORE IS "${count_input.value}"`)
-        upperBlock.style.animation = "none";
-        upperBlock.style.display = "none";
-        lowerBlock.style.animation = "none";
-        lowerBlock.style.display = "none";
-
-    }
-}, 10);
 
 
 
